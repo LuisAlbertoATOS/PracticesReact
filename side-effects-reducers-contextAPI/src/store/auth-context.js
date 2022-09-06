@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const AuthContext = React.createContext({
   isLoggedIn: false,
@@ -6,7 +6,7 @@ const AuthContext = React.createContext({
   onLogin: (email, password) => {},
 });
 
-const AuthContextProvider = (props) => {
+export const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
