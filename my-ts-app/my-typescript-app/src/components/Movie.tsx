@@ -1,8 +1,9 @@
 import React, { PropsWithChildren, PropsWithoutRef, PropsWithRef } from 'react';
+import { IMovie } from '../interfaces/Movie.interface';
 
 import classes from './Movie.module.css';
 
-const Movie = (props:any) => {
+const Movie = (props:IMovie) => {
   return (
     <li className={classes.movie}>
       <h2>{props.title}</h2>

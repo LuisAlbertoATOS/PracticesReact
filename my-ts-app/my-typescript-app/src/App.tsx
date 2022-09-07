@@ -2,10 +2,11 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import MoviesList from "./components/MoviesList";
 import "./App.css";
-import { type } from "os";
+import { IMovie } from "./interfaces/Movie.interface";
+import { IMovieData } from "./interfaces/MovieData.interface";
 
 function App() {
-  const [movies, setMovies] = useState<any[]>([]);
+  const [movies, setMovies] = useState<IMovie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error|null>(null);
 
@@ -21,7 +22,7 @@ function App() {
         throw new Error("Something went wrong!");
       }
       
-      const transformedMovies = data.results.map((movieData:any) => {
+      const transformedMovies = data.results.map((movieData:IMovieData) => {
         return {
           id: movieData.episode_id,
           title: movieData.title,
